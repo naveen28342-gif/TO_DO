@@ -44,5 +44,5 @@ list.addEventListener('click', e=>{
 	else if(action==='delete'){ todos.splice(i,1); save(); render(); }
 });
 
-render();
+render(); 
 
