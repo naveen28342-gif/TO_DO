@@ -15,8 +15,12 @@ function render(){
 		li.className = 'todo' + (t.done ? ' done' : '');
 		li.innerHTML = `<span class="label">${escapeHtml(t.text)}</span>
 			<div class="actions">
-				<button data-action="toggle" data-i="${i}">${t.done? '↺':'✓'}</button>
-				<button data-action="delete" data-i="${i}">✕</button>
+				<button class="complete-btn" type="button" data-action="toggle" data-i="${i}" aria-label="${t.done ? 'Mark task as incomplete' : 'Mark task as complete'}">
+					${t.done ? 'completed' : '✓'}
+				</button>
+				<button class="delete-btn" type="button" data-action="delete" data-i="${i}" aria-label="Delete task">
+					X
+				</button>
 			</div>`;
 		list.appendChild(li);
 	});
